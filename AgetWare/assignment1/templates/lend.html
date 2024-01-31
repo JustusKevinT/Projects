@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #ddd;
+        }
+        .nav-bar a {
+            text-decoration: none;
+            color: #333;
+            margin-right: 10px;
+        }
+        .nav-bar a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <a href="/">Home</a>
+            <a href="/lend">Lend</a>
+            <a href="/payment">Payment</a>
+            <a href="/ledger">Ledger</a>
+            <a href="/account-overview">Account Overview</a>
+        </div>
+        <h1 align="center">Finance Management</h1>
+        <form action="/lendApplication" method="post" align="center">
+            <label for="Customer ID">Customer ID:</label>
+            <input type="text" id="customer_id" name="customer_id" required><br><br/>
+            <label for="Loan Amount">Loan Amount:</label>
+            <input type="text" id="loan_amount" name="loan_amount" required><br><br/>
+            <label for="Loan Period">Loan Period (in years):</label>
+            <input type="text" id="loan_period" name="loan_period" required><br><br/>
+            <label for="Rate of Interest">Rate of Interest:</label>
+            <input type="text" id="rate_of_interest" name="rate_of_interest" required><br><br/>
+            <input type="submit" value="Apply for Loan">
+        </form>
+    </div>
+</body>
+</html>

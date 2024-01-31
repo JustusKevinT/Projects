@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Piggy Bank</title>
+    <script>
+        function rvalidateForm() {
+            var username = document.forms["registerForm"]["username"].value;
+            if (username == "") {
+                alert("Username must be filled out");
+                return false;
+            }
+            return true;
+        }
+
+        function dvalidateForm() {
+            var username = document.forms["depositForm"]["username"].value;
+            var amount = document.forms["depositForm"]["amount"].value;
+            if (username == "") {
+                alert("Username must be filled out");
+                return false;
+            }
+            if (amount != "" && isNaN(amount)) {
+                alert("Amount must be a number");
+                return false;
+            }
+            return true;
+        }
+
+        function svalidateForm() {
+            var username = document.forms["showTransactionForm"]["username"].value;
+            if (username == "") {
+                alert("Username must be filled out");
+                return false;
+            }
+            return true;
+        }
+        function bvalidateForm() {
+            var username = document.forms["breakForm"]["username"].value;
+            if (username == "") {
+                alert("Username must be filled out");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1 align="center">AgetWare Online Piggy Bank</h1>
+    <table align="center">
+        <th><h2>Register</h2></th>
+    <form name="registerForm" action="/register" method="post" onsubmit="return rvalidateForm()">
+        <tr>
+            <td>
+        <input type="text" name="username" placeholder="Username" required>
+    </td>
+</tr>
+<tr>
+    <td>
+        <button type="submit">Register</button>
+    </td>
+</tr>
+    </form>
+    </table>
+    <br>
+    <table align="center">
+        <th><h2>Deposit</h2></th>
+    <form name="depositForm" action="/deposit" method="post" onsubmit="return dvalidateForm()" align="center">
+        <tr>
+            <td>
+        <input type="text" name="username" placeholder="Username" required>
+    </td>
+    </tr>
+    <tr>
+        <td>
+        <input type="number" name="amount" placeholder="Amount" step="0.01" required>
+    </td>
+    </tr>
+    <tr>
+        <td>
+        <button type="submit">Deposit</button>
+    </td>
+    </tr>
+    </form>
+</table>
+<br><br/>
+<form align = "center" name="showTransactionForm" action="/transactions" method="post" onsubmit="return svalidateForm()">
+    <input type="text" name="username" placeholder="Username" required>
+    <button type="submit">Show Transactions</button>
+</form>
+<br><br/>
+<form align = "center" name="breakForm" action="/delete_user" method="post" onsubmit="return bvalidateForm()">
+    <input type="text" name="username" placeholder="Username" required>
+    <button type="submit">Break Piggy Bank</button>
+</form>
+</body>
+</html>

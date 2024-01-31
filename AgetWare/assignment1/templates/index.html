@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #ddd;
+        }
+        .nav-bar a {
+            text-decoration: none;
+            color: #333;
+            margin-right: 10px;
+        }
+        .nav-bar a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <a href="/">Home</a>
+            <a href="/lend">Lend</a>
+            <a href="/payment">Payment</a>
+            <a href="/ledger">Ledger</a>
+            <a href="/account-overview">Account Overview</a>
+        </div>
+        <h1 align="center">Finance Management</h1>
+        <form action="/createAccount" method="post" align="center">
+            <label for="name">User Name:</label>
+            <input type="text" id="name" name="name" required><br><br/>
+            <input type="submit" value="Create Account">
+        </form>
+    </div>
+</body>
+</html>
